@@ -1,0 +1,5 @@
+<div [ngClass]="{'horizontal': horizontal}" class="traffic-light-div">
+    <div [ngClass]="{'active':(horizontalRed && horizontal) || (verticalRed && !horizontal)}" class="red"></div>
+    <div [ngClass]="{'active':yellowLight}" class="yellow"></div>
+    <div [ngClass]="{'active':(horizontalGreen && horizontal) || (verticalGreen && !horizontal)}" class="green"></div>
+</div>

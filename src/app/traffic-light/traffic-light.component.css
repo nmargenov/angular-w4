@@ -1,0 +1,42 @@
+.red, .yellow, .green{
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    opacity: 0.4;
+}
+.red{
+    background-color: red;
+}
+.yellow{
+    background-color: yellow;
+}
+.green{
+    background-color: green;
+}
+
+.traffic-light-div{
+    border: 5px solid black;
+    width: fit-content;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.horizontal{
+    flex-direction: row;
+}
+
+.active{
+    opacity: 1;
+}
+
+.green.active{
+    box-shadow: 0 0 50px 5px green;
+}
+.yellow.active{
+    box-shadow: 0 0 50px 5px yellow;
+}
+.red.active{
+    box-shadow: 0 0 50px 5px red;
+}

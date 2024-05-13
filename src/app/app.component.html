@@ -1,14 +1,15 @@
 <div class="main-container">    
     <div class="top">
-        <app-traffic-light [horizontal]="true"/>
+        <app-traffic-light [horizontalGreen]="horizontalGreen" [verticalGreen]="verticalGreen" [yellowLight]="yellowLight" [horizontalRed]="horizontalRed" [verticalRed]="verticalRed" [changeColors]="changeColors" [emergency]="emergency" [horizontal]="true"/>
     </div>
     <div class="left">
-        <app-traffic-light [horizontal]="false"/>
+        <app-traffic-light [horizontalGreen]="horizontalGreen" [verticalGreen]="verticalGreen" [yellowLight]="yellowLight" [horizontalRed]="horizontalRed" [verticalRed]="verticalRed" [changeColors]="changeColors" [emergency]="emergency" [horizontal]="false"/>
     </div>
     <div class="right">
-        <app-traffic-light [horizontal]="false"/>
+        <app-traffic-light [horizontalGreen]="horizontalGreen" [verticalGreen]="verticalGreen" [yellowLight]="yellowLight" [horizontalRed]="horizontalRed" [verticalRed]="verticalRed" [changeColors]="changeColors" [emergency]="emergency" [horizontal]="false"/>
     </div>
     <div class="bottom">
-        <app-traffic-light [horizontal]="true"/>
+        <app-traffic-light [horizontalGreen]="horizontalGreen" [verticalGreen]="verticalGreen" [yellowLight]="yellowLight" [horizontalRed]="horizontalRed" [verticalRed]="verticalRed" [changeColors]="changeColors" [emergency]="emergency" [horizontal]="true"/>
     </div>
+    <app-emergency-button (changeEmitter)="handleEmergencyChange($event)"></app-emergency-button>
 </div>

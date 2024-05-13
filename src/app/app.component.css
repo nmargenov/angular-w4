@@ -5,7 +5,9 @@
     align-items: center;
     height: 100vh;
 }
-
+.bottom{
+    order: 3;
+}
 .left{
     position: absolute;
     left: 0;

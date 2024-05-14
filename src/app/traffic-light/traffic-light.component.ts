@@ -20,32 +20,51 @@ export class TrafficLightComponent {
   @Input() horizontalGreen!:boolean;
   @Input() horizontalRed!:boolean;
 
+  canCross:boolean=false;
+
   ngOnInit() {
     this.changeColors();
+    this.checkIfCanCross
   }
 
+  ngOnChanges(){
+    this.checkIfCanCross();
+  }
 
-  // changeColors() {
-  //   this.yellowLight=false;
-  //   this.horizontalRed=true;
-  //   this.verticalGreen=true;
-  //     this.timeoutOne = setTimeout(()=>{
-  //       this.horizontalRed=false;
-  //       this.verticalGreen=false;
-  //       this.yellowLight=true;
-  //      this.timeoutTwo= setTimeout(()=>{
-  //         this.yellowLight=false;
-  //         this.verticalRed=true;
-  //         this.horizontalGreen=true;
-  //         this.timeoutThree = setTimeout(()=>{
-  //           this.verticalRed=false;
-  //           this.horizontalGreen=false;
-  //           this.yellowLight=true;
-  //           this.timeoutFour = setTimeout(()=>{        
-  //             this.changeColors();     
-  //           },2000)
-  //         },5000);
-  //       },2000);
-  //     },5000);
-  // }
+  checkIfCanCross(){
+    if(this.horizontal){
+      if(this.horizontalRed){
+        this.canCross = false;
+      }else{
+        this.canCross = true;
+      }
+    }
+    if(!this.horizontal){
+      if(this.verticalRed){
+        this.canCross = false;
+      }else{
+        this.canCross = true;
+      }
+    }
+  }
+
+  cross(){
+    if(this.horizontal){
+      if(this.horizontalRed){
+        return;
+      }
+      if(this.yellowLight){
+        alert('Неправилно пресичане на жълто!')
+      }
+    }
+    if(!this.horizontal){
+      if(this.verticalRed){
+        return;
+      }
+      if(this.yellowLight){
+        alert('Неправилно пресичане на жълто!')
+      }
+    }
+  }
+
 }
